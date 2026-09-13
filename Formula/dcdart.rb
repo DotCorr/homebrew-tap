@@ -12,14 +12,19 @@ class Dcdart < Formula
   on_linux do
     on_intel do
       url "https://github.com/DotCorr/dcdart/releases/download/v0.1.2/dcdart-v0.1.2-linux-x86_64.tar.gz"
-    sha256 "9347a04f03885a2686fc7fac2e857954bc9d9cb2a42bcbf92a1fac84c2a33afe"
+      sha256 "9347a04f03885a2686fc7fac2e857954bc9d9cb2a42bcbf92a1fac84c2a33afe"
     end
     on_arm do
       url "https://github.com/DotCorr/dcdart/releases/download/v0.1.2/dcdart-v0.1.2-linux-arm64.tar.gz"
-    sha256 "bc835bf35a36897c7267e26f2d952a71a81f7e0438ca4f532a54cb5e2c1dcb8f"
+      sha256 "bc835bf35a36897c7267e26f2d952a71a81f7e0438ca4f532a54cb5e2c1dcb8f"
     end
   end
 
+
+  bottle do
+    root_url "https://github.com/DotCorr/dcdart/releases/download/v0.1.2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93bc5d629a688b3ed23a2d3070214f610d670deeffe3f483a7d315037e8fc31d"
+  end
 
   def install
     libexec.install Dir["*"]
