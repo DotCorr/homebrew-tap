@@ -1,18 +1,18 @@
-# Dotcorr Local-test
+# DotCorr Homebrew tap
 
-## How do I install these formulae?
+DCDart 0.1.1 for macOS ARM64 and Linux x86-64/ARM64.
 
-`brew install dotcorr/local-test/<formula>`
-
-Or `brew tap dotcorr/local-test` and then `brew install <formula>`.
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "dotcorr/local-test"
-brew "<formula>"
+```sh
+brew tap dotcorr/tap
+brew trust --formula dotcorr/tap/dcdart
+brew install dcdart
+dcc --version
 ```
 
-## Documentation
+To upgrade: `brew update && brew upgrade dcdart`.
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+Requires Dart SDK **3.12.2** and Clang/LLVM for source compilation. Linux binaries require glibc 2.39+ (tested on Ubuntu 24.04). iOS/Android are output targets and additionally need Xcode/the Android NDK to link. This is the official DotCorr tap, not Homebrew core.
+
+[Setup guide](https://dcdart.dotcorr.com/docs#setup) · [Release archives](https://github.com/DotCorr/dcdart/releases/tag/v0.1.1) · [Windows Scoop bucket](https://github.com/DotCorr/scoop-bucket)
+
+Before changing the formula, verify the release asset checksums, perform a native compile/link/execute test, and update DCDart's website and release status together.
