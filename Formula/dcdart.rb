@@ -1,29 +1,25 @@
 class Dcdart < Formula
   desc "Native systems language with Dart syntax — AOT to object files, ARC, C ABI"
   homepage "https://github.com/DotCorr/dcdart"
-  version "0.1.1"
+  version "0.1.2"
   license "Apache-2.0" => { "with" => "LLVM-exception" }
 
   on_macos do
     depends_on arch: :arm64
-    url "https://github.com/DotCorr/dcdart/releases/download/v0.1.1/dcdart-v0.1.1-darwin-arm64.tar.gz"
-    sha256 "cbd84fc6b7cd4662c42943a33bbfb1604ddd64565498753c498f494d1e5c0245"
+    url "https://github.com/DotCorr/dcdart/releases/download/v0.1.2/dcdart-v0.1.2-darwin-arm64.tar.gz"
+    sha256 "048867864ba94c47be983fb6b3c2c95709d9a5780c08bcf36de6cf4b61514ec2"
   end
   on_linux do
     on_intel do
-      url "https://github.com/DotCorr/dcdart/releases/download/v0.1.1/dcdart-v0.1.1-linux-x86_64.tar.gz"
-      sha256 "a498d97ff2a736d4a1ecb503828c5d4cbc6e2c60aafe8b51790e19e9907f9cae"
+      url "https://github.com/DotCorr/dcdart/releases/download/v0.1.2/dcdart-v0.1.2-linux-x86_64.tar.gz"
+    sha256 "9347a04f03885a2686fc7fac2e857954bc9d9cb2a42bcbf92a1fac84c2a33afe"
     end
     on_arm do
-      url "https://github.com/DotCorr/dcdart/releases/download/v0.1.1/dcdart-v0.1.1-linux-arm64.tar.gz"
-      sha256 "e611d7d165c8aeb762baa4074a6e72115c29ed89e3e766786034dbc39df9dced"
+      url "https://github.com/DotCorr/dcdart/releases/download/v0.1.2/dcdart-v0.1.2-linux-arm64.tar.gz"
+    sha256 "bc835bf35a36897c7267e26f2d952a71a81f7e0438ca4f532a54cb5e2c1dcb8f"
     end
   end
 
-  bottle do
-    root_url "https://github.com/DotCorr/dcdart/releases/download/v0.1.1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b02183cad489ca77dc887997073d1d554efb488ee0242db20674b13ecbf8744d"
-  end
 
   def install
     libexec.install Dir["*"]
@@ -50,7 +46,7 @@ class Dcdart < Formula
   end
 
   test do
-    assert_match "dcc 0.1.1", shell_output("#{bin}/dcc --version")
+    assert_match "dcc 0.1.2", shell_output("#{bin}/dcc --version")
     # Source compilation requires exactly Dart SDK 3.12.2.
     dart = ENV["DCDART_DART"]
     dart = "dart" if dart.nil? || dart.empty?
