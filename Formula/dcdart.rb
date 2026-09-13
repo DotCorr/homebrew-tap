@@ -2,7 +2,7 @@ class Dcdart < Formula
   desc "Native systems language with Dart syntax — AOT to object files, ARC, C ABI"
   homepage "https://github.com/DotCorr/dcdart"
   version "0.1.2"
-  license "Apache-2.0" => { "with" => "LLVM-exception" }
+  license "Apache-2.0" => { with: "LLVM-exception" }
 
   on_macos do
     depends_on arch: :arm64
