@@ -22,6 +22,11 @@ class Dcdart < Formula
 
 
 
+  bottle do
+    root_url "https://github.com/DotCorr/dcdart/releases/download/v0.1.3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0048dee408a8d9f7a990cf52ad55c664f4ecb380266e422cb28db2e08f0f9dcd"
+  end
+
   def install
     libexec.install Dir["*"]
     bin.install_symlink libexec/"core/dcc/bin/dcc"
