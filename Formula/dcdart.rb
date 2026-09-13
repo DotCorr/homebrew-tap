@@ -45,7 +45,7 @@ class Dcdart < Formula
       and use the same path in your source's import. (The prelude path is
       matched lexically, so it must be spelled the same on both sides.)
 
-      Ready-to-run examples live in #{opt_libexec}/core/examples.
+      Setup and examples: https://dcdart.dotcorr.com/docs#setup
     EOS
   end
 
